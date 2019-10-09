@@ -14,5 +14,6 @@ public class App {
 
         for (String habitation : habitations)
             System.out.print(habitation + " ");
+
     }
 }
