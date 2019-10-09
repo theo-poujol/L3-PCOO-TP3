@@ -6,5 +6,10 @@ public class App {
         habitations.set(3, "Maison");
         habitations.set(4, "Immeuble");
         habitations.set(5, "Hutte");
+
+        for (int index =  habitations.getIndexMin();
+             index <= habitations.getIndexMax();
+             index++)
+            System.out.print(habitations.get(index).length() + " ");
     }
 }
