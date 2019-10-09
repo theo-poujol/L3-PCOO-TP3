@@ -2,6 +2,7 @@ import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.function.Consumer;
 
 public class RangeArray<T> implements Iterable<T>{
 
@@ -92,6 +93,14 @@ public class RangeArray<T> implements Iterable<T>{
     }
 
     /**
+     *
+     * @return le tableau de RangeArray
+     */
+    public ArrayList<Pair<Integer, T>> getArray() {
+        return array;
+    }
+
+    /**
      * Fonction set générique
      *
      * @param key clé de la valeur
@@ -117,5 +126,25 @@ public class RangeArray<T> implements Iterable<T>{
     @Override
     public Iterator iterator() {
         return null;
+    }
+
+    @Override
+    public void forEach(Consumer<? super T> action) {
+
+        ArrayList<T> listT = new ArrayList<>(this.indexMax - this.indexMin);
+        for (int index = 0; index < this.array.size(); ++index) {
+            listT.set(index,this.get(index));
+        }
+
+        for (T t : listT) {
+            action.accept(t);
+        }
+
+        /*T value = null;
+        for (int index = 0; index < this.array.size(); ++index) {
+            if (this.array.get(index).getKey() == index) {
+                action.accept(this.array.get(index).getValue());
+            }
+        }*/
     }
 }

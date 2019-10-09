@@ -11,5 +11,8 @@ public class App {
              index <= habitations.getIndexMax();
              index++)
             System.out.print(habitations.get(index).length() + " ");
+
+        for (String habitation : habitations)
+            System.out.print(habitation + " ");
     }
 }
