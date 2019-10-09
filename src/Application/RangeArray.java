@@ -3,7 +3,7 @@ import javafx.util.Pair;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class RangeArray<T> {
+public class RangeArray<T> implements Iterable<T>{
 
     /**
      * Attributs
@@ -114,8 +114,8 @@ public class RangeArray<T> {
      * Fonction qui rend la classe RangeArray itérable
      * @return l'iterator à utiliser
      */
-    /*@Override
+    @Override
     public Iterator iterator() {
         return null;
-    }*/
+    }
 }
